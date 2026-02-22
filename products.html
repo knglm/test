@@ -74,6 +74,7 @@
         // Handle the form submission using JavaScript
         document.getElementById("contactForm").addEventListener("submit", function(e) {
             e.preventDefault(); // Prevent the form from submitting the traditional way
+
             // Get form values
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
@@ -84,7 +85,7 @@
             const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
             // Create the mailto link
-            const mailtoLink = `mailto:knglml@126.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:sales@cnesmai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             // Redirect the browser to the mailto link (open the default email client)
             window.location.href = mailtoLink;
