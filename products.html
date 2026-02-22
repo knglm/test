@@ -3,56 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our range of industrial cutting machines and equipment.">
-    <title>Products - Industrial Products</title>
-    <link rel="stylesheet" href="res/css/style.css">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Our Products</h1>
-        <section class="product-list">
-            <div class="product">
-                <img src="assets/images/product1.jpg" alt="Product 1">
-                <h2>Cutting Machine 1</h2>
-                <p>High-performance cutting machine for industrial use.</p>
-                <a href="product-details.html" class="cta-button">Learn More</a>
-            </div>
-            <div class="product">
-                <img src="assets/images/product2.jpg" alt="Product 2">
-                <h2>Cutting Machine 2</h2>
-                <p>Durable and efficient cutting machine for all industries.</p>
-                <a href="product-details.html" class="cta-button">Learn More</a>
-            </div>
-			<div class="additional-icon">
-			    <span>
-			        <a href="mailto:knglml@126.com">knglml@126.com</a>
-			    </span>
-			    <img alt="email" src="images/aside4.png"/>
-			</div>
-			
-			<div id="mob-tab" style="z-index:9999;">
-			    <a class="sendemail" href="mailto:knglml@126.com">Send an Email</a>
-			    <a href="contact/#message">Contact Us</a>
-			</div>
-        </section>
-    </main>
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-    <footer>
-        <p>Contact us: <a href="mailto:support@company.com">support@company.com</a></p>
-    </footer>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
 
-    <script src="assets/js/script.js"></script>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <script>
+        // Handle the form submission using JavaScript
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Create the subject and body of the email
+            const subject = `Contact Form Submission from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+            // Create the mailto link
+            const mailtoLink = `mailto:knglml@126.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Redirect the browser to the mailto link (open the default email client)
+            window.location.href = mailtoLink;
+        });
+    </script>
+
 </body>
 </html>
